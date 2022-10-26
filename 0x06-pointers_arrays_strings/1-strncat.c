@@ -1,28 +1,28 @@
 #include "main.h"
 
 /**
- * _strcat - concatenates two strings,
- * @dest: first parameter
- * @src: second parameter
- * @n: third parameter
- * Return: the pointer to dest
+ * _strncat - concatenates two strings,
+ * @dest: destination.
+ * @src: source.
+ * @n: number of elements of array
+ * Return: the pointer to dest.
  */
-char *_strncat(char *dest, char *src, int n);
+char *_strncat(char *dest, char *src, int n)
 {
-int i = 0, j = 0;
+	int count1 = 0, count2 = 0;
 
-	while (*(dest + i) != '\0')
+	while (*(dest + count1) != '\0')
 	{
-		i++;
+		count1++;
 	}
 
-	while (j < n)
+	while (count2 < n)
 	{
-		*(dest + i) = *(src + j);
-		if (*(src + j) == '\0')
+		*(dest + count1) = *(src + count2);
+		if (*(src + count2) == '\0')
 			break;
-		i++;
-		j++;
+		count1++;
+		count2++;
 	}
 	return (dest);
 }
